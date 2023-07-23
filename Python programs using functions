@@ -1,0 +1,140 @@
+(1)  
+# Write a Python Program too compute the mean, mode and median of the given group of numbers using functions
+
+def mean(l):
+    return sum(l) / len(l)
+
+
+def mode(lst):
+    return max(set(lst), key=lst.count)
+
+
+def median(lst):
+    if len(lst) % 2 == 0:
+        return (lst[len(lst) // 2 - 1] + lst[len(lst) // 2]) / 2
+    else:
+        return lst[len(lst) // 2]
+
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 4, 5, 6]
+print("Mean: ", mean(lst))
+print("Median: ", median(lst))
+print(
+    "Mode: ", mode(lst)
+)
+
+(2)
+# Write a Python Program to check whether a given number is a perfect number or not using functions. 
+def is_perfect(num):
+    sum = 0
+    for i in range(1, num):
+        if num % i == 0:
+            sum += i
+    if sum == num:
+        return True
+    else:
+        return False
+
+
+print(is_perfect(int(input("Enter Number: "))))
+
+(3)
+ # Write a Python Program to compute the area of circle, square, rectangle and triangle by using functions 
+
+def area_circle(radius):
+    return 3.14*radius**2
+    
+def area_rectangle(length, width):
+    return length*width
+
+def area_triangle(base, height):
+    return base*height/2
+
+def area_square(side):
+    return side**2
+
+print("Area of Circle:", area_circle(5))
+print("Area of Rectangle:", area_rectangle(5, 6))
+print("Area of Triangle:", area_triangle(5, 6))
+print("Area of Square:", area_square(5))
+
+(4)
+# Write a Python Program to display the calender by using functions
+
+import calendar
+
+year = int(input("Enter a year: "))
+month = int(input("Enter a month: "))
+
+print(calendar.month(year, month))y using functions
+
+(5)
+
+# Write a Python Program to display Floyd's Triangle by using functions 
+
+def floyd_triangle(n):
+    c = 1
+    for i in range(n):
+        for j in range(i+1):
+            print(c, end=' ')
+            c += 1
+        print()
+
+
+n = int(input("Enter the number of rows: "))
+floyd_triangle(n)
+
+(6)
+# Write a Python Program to display Pasacal's Triangle by using functions
+
+def fact(n):
+  r=1
+  for i in range(1,n+1):
+    r = r*i
+  return r
+
+r = int(input("Enter the number of rows : "))
+for i in range(0, r):
+  for j in range(1, r-i):
+    print("  ", end="")
+  for k in range(0, i+1):
+    c = int(fact(i)/(fact(k)*fact(i-k)))
+    print("  ", c, end="")
+  print() 
+
+(7)
+
+# Write a Python Program to perform linear search by using functions 
+
+def linear_search(data, target):
+    for i in range(len(data)):
+        if data[i] == target:
+            return i
+    return -1
+
+
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(linear_search(lst, 5))
+
+(8)
+
+# Write a Python Program to add, subtract and multiply complex numbers using functions.
+
+def add( z1, z2):
+    return z1 + z2
+
+def sub( z1, z2):
+    return z1-z2
+
+def mul( z1, z2):
+    return z1 * z2
+
+a = int(input("Real part of first number: "))
+b = int(input("Imaginary part of first number: "))
+c = int(input("Real part of second number: "))
+d = int(input("Imaginary part of second number: "))
+x = complex(a, b) 
+y = complex(c,d)
+print("Sum is :",add(x,y)) 
+print("difference is :",sub(x,y))
+print("product is :",mul(x,y))
